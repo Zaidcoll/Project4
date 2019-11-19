@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ProjectManagement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,3 +130,5 @@ AUTHENTICATION_BACKENDS = (
 
 )
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+LOGIN_URL='login'

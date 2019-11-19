@@ -15,12 +15,12 @@
             <a href="#" class="brand-logo center ">USHIRT</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if not user.is_authenticated %}
-                <li><a href="login">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="{%url 'login'%}">Login</a></li>
+                <li><a href="{%url 'register'%}">Register</a></li>
                 {%endif%}
                 {% if user.is_authenticated %}
                 <li><a href="{%url 'profile'%}">Profile</a></li>
-                <li><a href="logout">Logout</a></li>
+                <li><a href="{%url 'logout'%}">Logout</a></li>
                 {%endif%}
             </ul>
         </div>

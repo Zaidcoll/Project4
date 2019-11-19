@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, reverse, HttpResponse
 from django.contrib import auth, messages
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserRegistrationForm
 #import the login required annotation
 from django.contrib.auth.decorators import login_required
 
@@ -37,3 +37,27 @@ def login(request):
 @login_required
 def profile(request):
     return HttpResponse('Profile')
+    
+def register(request):
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            #check if username and password matches
+            user = auth.authenticate(username=request.POST['username'],password=request.POST['password1'])
+            if user:
+                #login the user
+                auth.login(user=user,request=request)
+                messages.success(request,"You have registered successfully")
+            else:
+                messages.error(request,'You failed to register')
+            return redirect(reverse('index'))
+        else:
+            return render(request,'accounts/register.html',{
+                'form':form
+            })
+    else:
+        register_form = UserRegistrationForm()
+        return render(request, 'accounts/register.html',{
+            'form':register_form
+        })

@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block content%}
+{%for i in item%}
+<div>
+    <h1>Name: {{i.name}}</h1>
+    <p>Done: {{i.done}}</p>
+    <div>
+        <ul>
+            {%for t in i.tags.all%}
+            <li>{{t}}</li>
+            {%endfor%}
+        </ul>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}

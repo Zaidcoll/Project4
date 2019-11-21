@@ -11,6 +11,11 @@
             {%endfor%}
         </ul>
     </div>
+    <div>
+        {% if i.photo%}
+        <img src = "{{i.photo.url}}"/>
+        {%endif%}
+    </div>
 </div>
 {%endfor%}
 {%endblock%}

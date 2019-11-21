@@ -8,6 +8,7 @@ class Item(models.Model):
     done = models.BooleanField(blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     tags = models.ManyToManyField('Tag')
+    photo = models.ImageField(upload_to='images/',null = True)
     
     def __str__(self):
         return self.name

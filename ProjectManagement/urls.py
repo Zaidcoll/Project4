@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static 
 from accounts.views import index, logout , login , profile , register
+from payments.views import payments
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name = 'index'),
     path('accounts/',include('accounts.urls')),
-    path('tasks/',include('tasks.urls'))
-]
+    path('tasks/',include('tasks.urls')),
+    path('payments/',include('payments.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

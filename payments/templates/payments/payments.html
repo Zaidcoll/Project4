@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block content%}
+<h1>Thank you for your purchase!Your bill is {{amount_dollars}}</h1>
+<form method="POST">
+  {% csrf_token %}
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="{{ stripe_key }}"
+          data-description="Your payment is being processed!"
+          data-amount="{{amount}}"
+          data-locale="auto"></script>
+  <input type='hidden' name='amount' value='{{amount}}'/>
+</form>
+
+{%endblock%}

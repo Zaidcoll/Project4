@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{%block content%}
+<h1>Payments</h1>
+<form method = 'GET' action ='{%url 'payments'%}'>
+    {% csrf_token%}
+    <input type = 'text' name = 'amount'/>
+    <input type = 'submit' value = 'pay now'/>
+</form>
+{%endblock%}

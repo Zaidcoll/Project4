@@ -1,13 +1,15 @@
 {% extends 'base.html'%}
+{%load crispy_forms_tags %}
 {%block content%}
+
 <div class="container">
-<h1>Create New Item</h1>
-<form method ='POST'>
-{% csrf_token%}
-
-{{ form.as_p}}
-
-<input type = 'submit' value = 'Create Item'/>
-</form>
+    <h1>Create New Item</h1>
+    <form method ='POST'enctype="multipart/form-data">
+    {% csrf_token%}
+    
+    {{ form | crispy}}
+    
+    <input type = 'submit' value = 'Create Item'/>
+    </form>
 </div>
 {%endblock%}

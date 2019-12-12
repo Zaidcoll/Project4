@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%block content%}
+<h1>Your total bill is: ${{total_cost}}</h1>
+<form method="POST">
+  {% csrf_token %}
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="{{ stripe_key }}"
+          data-description="Your payment is being processed!"
+          data-amount="{{amount_instripe}}"
+          data-locale="auto"></script>
+  <input type='hidden' name='amount' value='{{amount_instripe}}'/>
+</form>
+{%for cart_item in all_cart_items %}
+<div class="media">
+  
+  <img src="{{cart_item.product.image.url}}" class="mr-3" alt="...">
+  <div class="media-body">
+    <h5 class="mt-0">{{cart_item.product.name}}</h5>
+      <p>
+      {{cart_item.product.description}}
+      </p>      
+      
+      <p>
+      ${{cart_item.product.cost}}
+      </p>
+        <a href="{% url 'remove_from_cart' cart_item_id=cart_item.id %}">Remove</a>
+  </div>
+</div>
+{%endfor%}
+
+
+{%endblock%}

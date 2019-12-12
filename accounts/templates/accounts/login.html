@@ -1,12 +1,15 @@
 {% extends 'base.html'%}
+{% load crispy_forms_tags %}
 {%block content%}
     
     <div class="container">
+        
         <h1>LOGIN</h1>
         <form method ='POST'>
         {%csrf_token%}
-        {{form.as_p}}
+        {{form|crispy}}
         <input type ='submit' class = 'btn btn-success'value = 'Log In'/>
+        
         </form>
     </div>
 

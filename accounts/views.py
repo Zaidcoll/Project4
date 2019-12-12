@@ -33,7 +33,7 @@ def login(request):
                 # log in the user
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in")
-                return redirect(reverse('index'))
+                return redirect(reverse('catalog'))
             else:
                 login_form.add_error(None, "Invalid username or password")
                 return render(request, 'accounts/login.html', {
@@ -66,7 +66,7 @@ def register(request):
                 messages.success(request, "You have registered successful")
             else:
                 messages.error(request, "You failed to register")
-            return redirect(reverse('index'))
+            return redirect(reverse('catalog'))
         else:
             return render(request, "accounts/register.html",{
                 'form': form

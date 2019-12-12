@@ -1,6 +1,13 @@
 {% extends 'base.html'%}
 {%block content%}
-    <div class="container">
-        <h1>Hello World </h1>
-    </div>
+<div class="jumbotron jumbotron-fluid container">
+  <div class="container hero-image1">
+    <h1 class="display-4 color2">Welcome</h1>
+    <p class="lead">TShirt shop</p>
+      <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{%url 'login'%}" role="button">Register to view!</a>
+  </p>
+  </div>
+</div>
 {%endblock%}
+

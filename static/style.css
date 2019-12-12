@@ -1,0 +1,8 @@
+.hero-image1{
+  background-image:url(media/images/heroimage.jpg);
+  height:100vh;
+  background-size:cover;
+}
+.color2{
+  color:white;
+}

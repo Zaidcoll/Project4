@@ -1,13 +1,19 @@
 {% extends 'base.html'%}
+{% load static %}
 {%block content%}
-<div class="jumbotron jumbotron-fluid container">
-  <div class="container hero-image1">
-    <h1 class="display-4 color2">Welcome</h1>
-    <p class="lead">TShirt shop</p>
+
+
+<div class="jumbotron jumbotron-fluid hero-image1 container">
+
+    <h1 class="display-4 color2 text-center font-weight-bold">Welcome</h1>
+    <p class="lead text-center font-italic">TShirt shop</p>
       <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{%url 'login'%}" role="button">Register to view!</a>
-  </p>
+  <div class = 'text-center'>
+    <a class="btn btn-primary btn-lg center-block " href="{%url 'login'%}" role="button">Login to view!</a>
   </div>
+    
+  </p>
+  
 </div>
 {%endblock%}
 

@@ -32,7 +32,7 @@ def login(request):
             if user:
                 # log in the user
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully logged in")
+                messages.success(request, "You have successfully logged in as: ")
                 return redirect(reverse('catalog'))
             else:
                 login_form.add_error(None, "Invalid username or password")
@@ -48,10 +48,6 @@ def login(request):
             'form':form
         })
         
-@login_required
-def profile(request):
-    return HttpResponse("Profile")
-    
 def register(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)

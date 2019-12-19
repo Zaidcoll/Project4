@@ -40,5 +40,5 @@ def remove_from_cart(request,cart_item_id):
     
     existing_cart_item=CartItem.objects.get(pk=cart_item_id)
     existing_cart_item.delete()
-    return redirect(reverse('catalog'))
+    return redirect(reverse('view_cart'))
 

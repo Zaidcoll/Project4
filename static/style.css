@@ -1,8 +1,13 @@
 .hero-image1{
-  background-image:url(media/images/heroimage.jpg);
+  background-image:url('Images/heroimage.jpg');
   height:100vh;
   background-size:cover;
 }
+.hero-image2{
+  background-image:url('Images/tshirt100.jpeg');
+  height:70vh;
+  background-size:cover;
+}
 .color2{
-  color:white;
+  color:black;
 }

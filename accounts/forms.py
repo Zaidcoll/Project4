@@ -13,7 +13,7 @@ class UserLoginForm(forms.Form):
 
 #USer Registration
 class UserRegistrationForm(UserCreationForm):
-    password1 = forms.CharField(widget=forms.PasswordInput)
+    password1 = forms.CharField(label ="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(label ="Password Confirmation", widget=forms.PasswordInput)
     
     def clean_email(self):

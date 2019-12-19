@@ -1,6 +1,6 @@
 
 from django.urls import path, include
-from accounts.views import index, logout , login , profile , register
+from accounts.views import index, logout , login , register
 from .views import create_item, show_item
 
 urlpatterns = [

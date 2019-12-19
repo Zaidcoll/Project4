@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-import sys
+
 
 
 
@@ -27,9 +27,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY=os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://tshirt-project4.herokuapp.com/']
+ALLOWED_HOSTS = ['*','https://tshirt-project4.herokuapp.com/']
 
 
 # Application definition
@@ -174,8 +174,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STRIPE_PUBLISHABLE_KEY=os.environ['STRIPE_PUBLISHABLE_KEY']
 STRIPE_SECRET_KEY=os.environ['STRIPE_SECRET_KEY']
 
-if 'test' in sys.argv:
-    DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase'
-    }

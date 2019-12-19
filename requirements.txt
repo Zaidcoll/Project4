@@ -20,6 +20,7 @@ lazy-object-proxy==1.4.2
 mccabe==0.6.1
 parso==0.1.1
 pbr==5.4.3
+Pillow==6.2.1
 psycopg2==2.8.4
 pyasn1==0.4.7
 pylint==1.8.1

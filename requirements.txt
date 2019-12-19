@@ -16,7 +16,7 @@ Click==7.0
 CodeIntel==0.9.3
 configparser==4.0.2
 cookiecutter==1.6.0
-cryptography==2.1.4
+cryptography==2.3
 dateparser==0.7.2
 Django==1.11.10
 docker==4.0.2

@@ -26,6 +26,7 @@ Flask==1.0.4
 functools32==3.2.3.post2
 future==0.17.1
 futures==3.3.0
+gunicorn==20.0.4
 idna==2.6
 ikpdb==1.2.3
 Inflector==2.0.12

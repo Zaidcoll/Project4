@@ -1,0 +1,1 @@
+web: gunicorn TSHIRT.wsgi:application

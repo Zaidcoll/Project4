@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {%block content%}
+<div class ='container'>
 <h1>Your total bill is: ${{total_cost}}</h1>
 <form method="POST">
   {% csrf_token %}
@@ -11,7 +12,7 @@
   <input type='hidden' name='amount' value='{{amount_instripe}}'/>
 </form>
 {%for cart_item in all_cart_items %}
-<div class="media">
+<div class="media ">
   
   <img src="{{cart_item.product.image.url}}" class="mr-3" alt="...">
   <div class="media-body">
@@ -21,10 +22,14 @@
       </p>      
       
       <p>
-      ${{cart_item.product.cost}}
+      ${{cart_item.product.cost}} each
+      </p>      
+      <p>
+      Quantity: {{cart_item.quantity }}
       </p>
         <a href="{% url 'remove_from_cart' cart_item_id=cart_item.id %}">Remove</a>
   </div>
+</div>
 </div>
 {%endfor%}
 

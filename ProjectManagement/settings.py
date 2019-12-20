@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY=os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*','https://tshirt-project4.herokuapp.com/']
 
@@ -128,8 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 #AWS
 #Disable the cache
@@ -144,6 +144,7 @@ AWS_ACCESS_KEY_ID=os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY=os.environ["AWS_SECRET_ACCESS_KEY"]
 AWS_S3_CUSTOM_DOMAIN="{}.s3.amazonaws.com".format(AWS_STORAGE_BUCKET_NAME)
 
+STATIC_URL = '/static/'
 STATICFILES_STORAGE="custom_storages.StaticStorage"
 STATICFILES_LOCATION="static"
 DEFAULT_FILE_STORAGE="custom_storages.MediaStorage"
